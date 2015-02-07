@@ -63,7 +63,7 @@ public class Principal {
 		for(int i=0; i<frase.length(); i++){
 			
 			int posLetra=abcOrig.lastIndexOf(""+frase.charAt(i));
-			System.out.println(posLetra);
+			
 			if(posLetra!=-1) {
 				char letraCodif=abcClave.charAt(posLetra);
 				frase.setCharAt(i, letraCodif);

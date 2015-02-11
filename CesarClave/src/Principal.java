@@ -13,7 +13,6 @@ public class Principal {
 		int k=7;
 		
 		
-		
 		for(int i=0; i<clave.length(); i++) {
 			
 			//Quitamos las letras repetidas de la clave
@@ -23,43 +22,36 @@ public class Principal {
 				}
 			}
 			
-		}
-		
-		
-		//Creamos el nuevo abecedario
-		int indexAbc=0;
-		for(int i=k; i<abcOrig.length(); i++) {
-			if(i-k<clave.length()) {
-				abcClave.setCharAt(i, clave.charAt(i-k));
+			if(k+1>abcOrig.length()) {
+				k=0;
 			}
-			else {
-				boolean repetir=true;
-				do {
-					if(clave.lastIndexOf(""+abcOrig.charAt(indexAbc))==-1) {
-						abcClave.setCharAt(i, abcOrig.charAt(indexAbc));
-						repetir=false;
-					}
-					indexAbc++;
-					
-					
-				}while(repetir && indexAbc<abcOrig.length());
+			abcClave.setCharAt(k, clave.charAt(i));
+			k++;
+			
+		}
+		
+		
+		System.out.println(""+k);
+		for(int i=0; i<abcOrig.length(); i++) {
+			if(k+1>abcOrig.length()) {
+				k=0;
 			}
-		}
-		
-		for(int i=0; i<k; i++) {
-			boolean repetir=true;
-			do {
-				if(clave.lastIndexOf(""+abcOrig.charAt(indexAbc))==-1) {
-					abcClave.setCharAt(i, abcOrig.charAt(indexAbc));
-					repetir=false;
-				}
-				indexAbc++;
+			if(clave.lastIndexOf(""+abcOrig.charAt(i))==-1) {
 				
-				
-			}while(repetir && indexAbc<abcOrig.length());
+				abcClave.setCharAt(k, abcOrig.charAt(i));
+				k++;
+			}
+			
 		}
-		
+			
 		System.out.println(abcClave);
+			
+		
+		
+		
+		
+		
+		
 		for(int i=0; i<frase.length(); i++){
 			
 			int posLetra=abcOrig.lastIndexOf(""+frase.charAt(i));

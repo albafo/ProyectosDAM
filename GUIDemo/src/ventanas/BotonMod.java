@@ -29,6 +29,19 @@ public class BotonMod extends JButton{
 		setForeground(color);
 		setText(text);
 	}
+	
+	public BotonMod(String srcImg, String srcImgClick) {
+		
+		icon=new ImageIcon(getClass().getResource(srcImg));
+		iconPressed=new ImageIcon(getClass().getResource(srcImgClick));
+		setIcon(icon);
+		
+		setBorderPainted(false); 
+		setContentAreaFilled(false); 
+		setFocusPainted(false); 
+		setOpaque(false);
+		
+	}
 	 
 	 @Override
      protected void paintComponent(Graphics g) {

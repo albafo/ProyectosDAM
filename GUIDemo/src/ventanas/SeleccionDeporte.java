@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Stack;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,9 +19,11 @@ public class SeleccionDeporte extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Image img;
+	private static JPanel thisPanel;
 	
-	public SeleccionDeporte(JFrame frame, String src) {
+	public SeleccionDeporte(VentanaPrincipal frame, String src) {
 		 this.img=(new ImageIcon(getClass().getResource(src))).getImage();
+		 thisPanel=this;
 		 Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 		 setPreferredSize(size);
 		 setMinimumSize(size);
@@ -32,6 +35,7 @@ public class SeleccionDeporte extends JPanel {
 			btnFutbol7.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					setVisible(false);
+					frame.addPanelStack(thisPanel);
 					JPanel contentPane=new Futbol7(frame, "/img/background_tactics.jpg");
 					frame.setContentPane(contentPane);
 					contentPane.setVisible(true);

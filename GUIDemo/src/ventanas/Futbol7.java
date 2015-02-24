@@ -5,6 +5,9 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Stack;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,8 +22,8 @@ public class Futbol7 extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Image img;
-	
-	public Futbol7(JFrame frame, String src) {
+
+	public Futbol7(VentanaPrincipal frame, String src) {
 		 this.img=(new ImageIcon(getClass().getResource(src))).getImage();
 		 Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 		 setPreferredSize(size);
@@ -50,6 +53,15 @@ public class Futbol7 extends JPanel {
 			textField_1.setColumns(10);
 			textField_1.setBounds(435, 419, 171, 39);
 			add(textField_1);
+			JButton btnAtras = new BotonMod("/img/boton_atras.png", "/img/boton_atras_clicked.png");
+			btnAtras.setBounds(52, 57, 67, 49);
+			add(btnAtras);
+			btnAtras.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					frame.atras();
+				}
+			});
+
 	}
 	public Futbol7() {
 		this.img=null;

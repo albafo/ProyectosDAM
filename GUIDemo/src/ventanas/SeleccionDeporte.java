@@ -30,7 +30,7 @@ public class SeleccionDeporte extends JPanel {
 		 setMaximumSize(size);
 		 setSize(size);
 		 setLayout(null);
-		 JButton btnFutbol7 = new BotonMod("/img/button_blue.png", "/img/button_blue_clicked.png", "Fútbol 7", Color.WHITE);
+		 JButton btnFutbol7 = new BotonMod("/img/button_blue.png", "/img/button_blue_clicked.png", "FÃºtbol 7", Color.WHITE);
 		 btnFutbol7.setBounds(415, 299, 200, 44);
 			btnFutbol7.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {

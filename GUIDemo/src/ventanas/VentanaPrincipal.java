@@ -1,30 +1,18 @@
 package ventanas;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.Font;
-
-import javax.swing.AbstractButton;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.util.Stack;
-
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.JLabel;
 
 public class VentanaPrincipal extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
 	private Stack<JPanel> stack;
 
 	/**
@@ -61,6 +49,9 @@ public class VentanaPrincipal extends JFrame {
 		
 		//JPanel futbol7=new Futbol7(this, "/img/background_tactics.jpg");
 		//setContentPane(futbol7);
+		//futbol7.setLayout(null);
+		
+		
 		
 	}
 	
